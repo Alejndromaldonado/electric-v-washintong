@@ -225,7 +225,7 @@ fig_utilities.update_layout(showlegend=False,
 
 #  -------Inicializar la aplicación con el tema de Bootstrap----------
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"], suppress_callback_exceptions=True)
-server = app.server
+#server = app.server
 app.title = "Washintong EVs Dashboard"
 
 # Sidebar con navegación
@@ -261,8 +261,8 @@ dropdown = dcc.Dropdown(
 # ----------Layout del dashboard---------------
 app.layout = dbc.Container([
     dbc.Row([
-        sidebar,
-        content
+        html.Div(sidebar, className="sidebar"),
+        html.Div(content, className="graph-container")
     ]),
 ], fluid=True)
 
@@ -280,7 +280,7 @@ def render_tab_content(pathname):
                          ])
     elif pathname == "/tendencias":
         return dbc.Container([html.H6("Selecciona un Fabricante: "),dropdown,
-            dbc.Row([dbc.Col(dcc.Graph(id="grafico_linea_tiempo", figure=fig_time_line_evs, style={"padding":"10px 0px 0px 0px"}), width=12),
+            dbc.Row([dbc.Col(dcc.Graph(id="grafico_linea_tiempo", figure=fig_time_line_evs, className="dash-graph",style={"padding":"10px 0px 0px 0px"}), width=12),
             ]),
             dbc.Row([
                 dbc.Col(
@@ -291,7 +291,7 @@ def render_tab_content(pathname):
                 )
             ]),
             dbc.Row([
-                dbc.Col(dcc.Graph(id="grafico_scatter_map", figure=fig_scatter_map, style={"padding": "30px 0px 30px 0px"}), width=12),
+                dbc.Col(dcc.Graph(id="grafico_scatter_map", figure=fig_scatter_map,className="dash-graph", style={"padding": "30px 0px 30px 0px"}), width=12),
             ]),
             html.Br(),
             html.Br(),
@@ -307,8 +307,8 @@ def render_tab_content(pathname):
     elif pathname == "/ubicacion":
         return dbc.Container([
             dbc.Row([
-                dbc.Col(dcc.Graph(id="mapa_cluster", figure=fig_mapa_cluster, style={"padding":"40px 0px 0px 0px"}), width=6),
-                dbc.Col(dcc.Graph(id="counties_bar", figure=fig_counties, style={"padding":"40px 0px 0px 0px"}), width=6),
+                dbc.Col(dcc.Graph(id="mapa_cluster", figure=fig_mapa_cluster,className="dash-graph", style={"padding":"40px 0px 0px 0px"}), width=6),
+                dbc.Col(dcc.Graph(id="counties_bar", figure=fig_counties,className="dash-graph" ,style={"padding":"40px 0px 0px 0px"}), width=6),
             ]),
             html.Br(),
             html.Br(),
@@ -327,15 +327,15 @@ def render_tab_content(pathname):
     elif pathname == "/caracteristicas":
         return dbc.Container([
             dbc.Row([
-                dbc.Col(dcc.Graph(id="torta_modelos", figure=fig_pct_mercado_modelos), width=6),
-                dbc.Col(dcc.Graph(id="utility_energy", figure= fig_utilities), width=6),
+                dbc.Col(dcc.Graph(id="torta_modelos", figure=fig_pct_mercado_modelos,className="dash-graph"), width=6),
+                dbc.Col(dcc.Graph(id="utility_energy", figure= fig_utilities,className="dash-graph"), width=6),
                 dbc.Row(
                     dbc.Accordion(
                         [dbc.AccordionItem(analisis_5, title="Análisis: Marcas Populares WA", style={"padding": "10px 0px 0px 0px","textAlign": "justify"}),
                          dbc.AccordionItem(analisis_6, title="Análisis: Empresas Proveedoras de Energia", style={"padding": "10px 0px 0px 0px", "textAlign": "justify"})]
                     , start_collapsed=False)
                 ),
-                dbc.Col(dcc.Graph(id="treemap", figure= fig_modelos_por_marcas), width=6),
+                dbc.Col(dcc.Graph(id="treemap", figure= fig_modelos_por_marcas, className="dash-graph"), width=6),
             ])
         ])
     return html.Div([html.H3("Página no encontrada"), html.P("Seleccione una opción del menú.")])

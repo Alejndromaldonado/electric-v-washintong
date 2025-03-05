@@ -1,0 +1,17 @@
+/* Hace que los gráficos se apilen verticalmente en pantallas pequeñas */
+@media (max-width: 768px) {
+    .graph-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ajusta los gráficos al 100% del ancho en móviles */
+    .dash-graph {
+        width: 100% !important;
+    }
+    
+    /* Hace que el Sidebar desaparezca en pantallas pequeñas */
+    .sidebar {
+        display: none;
+    }
+}
