@@ -21,9 +21,9 @@ Este proyecto es un **dashboard interactivo** desarrollado con **Dash y Plotly**
 
 ---
 
-## 📸 Capturas de Pantalla
+## 📸 Link al Dashboard
 
-![Dashboard Screenshot](https://i.postimg.cc/90SXfSY2/evs-cars.png)
+![Dashboard Screenshot](https://i.postimg.cc/90SXfSY2/evs-cars.png)  
 [Enlace al Dashboard](https://wa-evs-dashboard.onrender.com/)
 
 ---
