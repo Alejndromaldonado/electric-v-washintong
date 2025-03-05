@@ -1,6 +1,6 @@
-dash==2.18.2
-dash_bootstrap_components==1.7.1
-pandas==2.2.3
-plotly==6.0.0
+dash
+dash_bootstrap_components
+pandas
 gunicorn
 dash-tools
+ipython

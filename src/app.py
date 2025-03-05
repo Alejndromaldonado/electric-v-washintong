@@ -403,4 +403,4 @@ def car_maker_select(selection):
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(host="0.0.0.0", port=8080, debug=False)
