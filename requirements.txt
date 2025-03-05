@@ -4,3 +4,4 @@ pandas
 gunicorn
 dash-tools
 ipython
+docopt==0.6.2
