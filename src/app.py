@@ -257,7 +257,6 @@ dropdown = dcc.Dropdown(
             className="dropdown"            
 )
 
-
 # ----------Layout del dashboard---------------
 app.layout = dbc.Container([
     dbc.Row([
