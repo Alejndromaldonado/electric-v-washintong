@@ -30,4 +30,4 @@ Este proyecto es un **dashboard interactivo** desarrollado con **Dash y Plotly**
 
 ## 📞 Contacto
 Para dudas o sugerencias, puedes encontrarme en:
-👨‍💻 **LinkedIn:** [linkedin.com/in/tuusuario](https://www.linkedin.com/in/alejandromaldonadod4t4/)
+👨‍💻 **LinkedIn:** [Alejandro Maldonado](https://www.linkedin.com/in/alejandromaldonadod4t4/)
