@@ -226,7 +226,7 @@ fig_utilities.update_layout(showlegend=False,
 #  -------Inicializar la aplicación con el tema de Bootstrap----------
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"], suppress_callback_exceptions=True)
 server = app.server
-app.title = "Washintong EVs Dashboard"
+app.title = "Washington EVs Dashboard"
 
 # Sidebar con navegación
 sidebar = dbc.Col([html.Br(),
